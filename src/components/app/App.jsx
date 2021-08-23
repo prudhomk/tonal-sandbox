@@ -1,9 +1,10 @@
+/* eslint-disable max-len */
 import React from 'react';
-import { Key } from '@tonaljs/tonal';
 
+import { I, II, III, IV, V, VI, VII, ii, iii, iv, v, vi, vii, bII, bIII, bV, bVI, bvi, bVII }  from '../data/chords';
 
 export default function App() {
-  const one = Key.minorKey('C').type;
-  return one;
+  const value = I.map(n => console.log(n));
+  return value;
 
 }
