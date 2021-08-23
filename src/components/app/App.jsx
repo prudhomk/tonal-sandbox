@@ -1,10 +1,44 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useState } from 'react';
 
-import { I, II, III, IV, V, VI, VII, ii, iii, iv, v, vi, vii, bII, bIII, bV, bVI, bvi, bVII }  from '../data/chords';
+import { C, Db, D, Dm, E, Em, Eb, F, Fm, Gb, G, Gm, Ab, Abm, A, Am, Bb, B, Bm }  from '../data/chords';
 
 export default function App() {
-  const value = I.map(n => console.log(n));
-  return value;
+  const [chord, setChord] = useState(C);
+
+  const ChordChanger = (temp) => {
+    switch(temp) {
+      case 'Db':
+        Db.map(n => console.log(n));
+        break;
+      case 'D':
+        D.map(n => console.log(n));
+        break;
+      default:
+        console.log('oops');
+    }
+  };
+
+  const value = C.map((n, i) => {
+    return (
+      <li onClick={() => {
+        return (setChord(n), ChordChanger(n));
+      }
+      } key={i}>
+        {n}
+      </li>
+    );
+
+  });
+
+ 
+
+  return (
+    <>
+      <h1>Chords</h1>
+      <ul>{value}</ul>
+    </>
+  );
+
 
 }
