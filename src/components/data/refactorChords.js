@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-export const C = ['Db', 'D', 'Dm', 'Eb', 'Ebm', 'E', 'Em', 'F', 'Fm', 'Gb', 'G', 'Gm', 'Ab', 'A', 'Am', 'Abm', 'Bb', 'Bm', 'B'];
+export const C = { 'C':  ['Db', 'D', 'Dm', 'Eb', 'Ebm', 'E', 'Em', 'F', 'Fm', 'Gb', 'G', 'Gm', 'Ab', 'A', 'Am', 'Abm', 'Bb', 'Bm', 'B'] };
 
-export const Db = ['C', 'Bb', 'Ab'];
+export const Db = { 'Db': ['C', 'Bb', 'Ab'] };
 
 export const Dm = ['C', 'G', 'Gm', 'Em', 'Am', 'Ab', 'Fm', 'F', 'Eb', 'Db'];
 
@@ -36,5 +36,3 @@ export const Bb = ['C', 'Db', 'Eb', 'B', 'Ab', 'F', 'Fm', 'G', 'D', 'A', 'Am', '
 export const B = ['C', 'Bb', 'Em', 'Bm', 'E', 'Am', 'G', 'D', 'Dm'];
 
 export const Bm = ['C'];
-
-
