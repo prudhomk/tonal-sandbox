@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import { Planet } from 'react-planet';
 
-import { C, Db, D, Dm, E, Em, Eb, F, Fm, Gb, G, Gm, Ab, Abm, A, Am, Bb, B, Bm }  from '../data/chords';
+import { C, Db, D, Dm, E, Em, Eb, F, Fm, Gb, G, Gm, Ab, Abm, A, Am, Bb, B, Bm } from '../data/chords';
 
 export function MyPlanet() {
-  return ( 
+  return (
     <Planet
       centerContent={
-        <div 
+        <div
           style={{
             height: 100,
             width: 100,
@@ -46,10 +46,10 @@ export default function App() {
 
   const chordialData = 'CHORDIAL_DATA';
   const chordArr = [];
-  
+
 
   const ChordChanger = (temp) => {
-    switch(temp) {
+    switch (temp) {
       case 'C':
         C.map(n => console.log(n));
         setDisplay(display.concat(C));
@@ -130,23 +130,24 @@ export default function App() {
         console.log('oops');
     }
   };
-  
-  
-  
+
+
+
   const value = C.map((n, i) => {
     console.log('value', value);
     return (
-     
+
       <li onClick={() => {
         return (setChord(n), ChordChanger(n));
       }
       } key={i}>
         {n}
       </li>
-      
+
     );
   });
 
+<<<<<<< HEAD
   const array = ({ display }) => {
     const displayElements = display.map((n, i) => {
       <li onClick={() => {
@@ -159,14 +160,34 @@ export default function App() {
     return <ul>{displayElements}</ul>;
   };
 
+=======
+
+  const array = display.map((n, i) => {
+    console.log('array', array);
+          const listItem = <li onClick={() => {
+            return (setChord(n), ChordChanger(n));
+          }
+          } key={i}>
+            {n}
+          </li>;
+    return <ul>{listItem}</ul>
+  });
+
+>>>>>>> 0ae312f450d5764ddb68ffac1df0ad90b6bd0906
 
   return (
-    <>
+    <div style={{ display: 'flex' }}>
       {/* <h1>{chord}</h1> */}
-      <ul>Value: {value}</ul>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>Clicked Chord: {array}</div>
+      <ul >
+        Value: {value}
+      </ul>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+
+        New Arrays: {array}
+      </div>
+      {/* <div style={{ display: 'flex'}}>Clicked Chord: {array}</div> */}
       {/* <div>{MyPlanet()}</div> */}
-    </>
+    </div>
   );
 
 
