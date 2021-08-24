@@ -153,26 +153,34 @@ export default function App() {
 
   const array = display.map((n, i) => {
     console.log('array', array);
-          const listItem = <li onClick={() => {
+          return <li onClick={() => {
             return (setChord(n), ChordChanger(n));
           }
           } key={i}>
             {n}
-          </li>;
-    return <ul>{listItem}</ul>
+          </li>   
   });
+
+  const ulGenerator = (arr) => {
+    return (
+      <ul >{arr}</ul>
+    )
+  }
 
 
   return (
     <div style={{display: 'flex'}}>
-      {/* <h1>{chord}</h1> */}
-      <ul >
-        Value: {value}
-      </ul>
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+      <div>
+        {/* <h1>{chord}</h1> */}
+            Value: {ulGenerator(value)}
           
-          New Arrays: {array}
         </div>
+      <div style={{display: 'flex', flexDirection: 'column'}}>
+        New Arrays: {array}
+      </div>
+      {/* <ul>
+        New Arrays: {array}
+      </ul> */}
       {/* <div style={{ display: 'flex'}}>Clicked Chord: {array}</div> */}
       {/* <div>{MyPlanet()}</div> */}
     </div>
