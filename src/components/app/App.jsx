@@ -136,7 +136,7 @@ export default function App() {
   const value = C.map((n, i) => {
     console.log('value', value);
     return (
-     
+    
       <li onClick={() => {
         return (setChord(n), ChordChanger(n));
       }
@@ -150,36 +150,32 @@ export default function App() {
 
   });
 
-  const array = return (
-    <ul></ul>
-  ) 
 
-  
-
-  display.map((n, i) => {
+  const array = display.map((n, i) => {
     console.log('array', array);
-    return (
-      <>
-        <ul>
-          <li onClick={() => {
+          const listItem = <li onClick={() => {
             return (setChord(n), ChordChanger(n));
           }
           } key={i}>
             {n}
-          </li>
-        </ul>
-      </>
-    );
+          </li>;
+    return <ul>{listItem}</ul>
   });
- 
+
 
   return (
-    <>
+    <div style={{display: 'flex'}}>
       {/* <h1>{chord}</h1> */}
-      <ul>Value: {value}</ul>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>Clicked Chord: {array}</div>
+      <ul >
+        Value: {value}
+      </ul>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+          
+          New Arrays: {array}
+        </div>
+      {/* <div style={{ display: 'flex'}}>Clicked Chord: {array}</div> */}
       {/* <div>{MyPlanet()}</div> */}
-    </>
+    </div>
   );
 
 
