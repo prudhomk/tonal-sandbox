@@ -145,33 +145,20 @@ export default function App() {
       </li>
       
     );
-
-    
-
   });
 
-  const array = return (
-    <ul></ul>
-  ) 
+  const array = ({ display }) => {
+    const displayElements = display.map((n, i) => {
+      <li onClick={() => {
+        return (setChord(n), ChordChanger(n));
+      }
+      } key={i}>
+        {n}
+      </li>;
+    });
+    return <ul>{displayElements}</ul>;
+  };
 
-  
-
-  display.map((n, i) => {
-    console.log('array', array);
-    return (
-      <>
-        <ul>
-          <li onClick={() => {
-            return (setChord(n), ChordChanger(n));
-          }
-          } key={i}>
-            {n}
-          </li>
-        </ul>
-      </>
-    );
-  });
- 
 
   return (
     <>

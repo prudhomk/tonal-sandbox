@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-export const C = ['Db', 'D', 'Dm', 'Eb', 'Ebm', 'E', 'Em', 'F', 'Fm', 'Gb', 'G', 'Gm', 'Ab', 'A', 'Am', 'Abm', 'Bb', 'Bm', 'B'];
+export const C = ['Db', 'D', 'Dm', 'Eb', 'E', 'Em', 'F', 'Fm', 'Gb', 'G', 'Gm', 'Ab', 'A', 'Am', 'Abm', 'Bb', 'Bm', 'B'];
 
 export const Db = ['C', 'Bb', 'Ab'];
 
