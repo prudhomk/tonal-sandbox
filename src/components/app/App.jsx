@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Planet } from 'react-planet';
 
-import { C, Db, D, Dm, E, Em, Eb, F, Fm, Gb, G, Gm, Ab, Abm, A, Am, Bb, B, Bm }  from '../data/chords';
+import Chords from '../data/refactorChords';
 
 export function MyPlanet() {
   return ( 
@@ -41,7 +41,7 @@ export function MyPlanet() {
 }
 
 export default function App() {
-  const [chord, setChord] = useState(C);
+  const [chord, setChord] = useState(Chords['C']);
   const [display, setDisplay] = useState([]);
 
   const chordialData = 'CHORDIAL_DATA';
@@ -51,80 +51,80 @@ export default function App() {
   const ChordChanger = (temp) => {
     switch(temp) {
       case 'C':
-        C.map(n => console.log(n));
-        setDisplay(display.concat(C));
+        Chords['C'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['C']));
         break;
       case 'Db':
-        Db.map(n => console.log(n));
-        setDisplay(display.concat(Db));
+        Chords['Db'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Db'].chords));
         break;
       case 'D':
-        D.map(n => console.log(n));
-        setDisplay(display.concat(D));
+        Chords['D'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['D'].chords));
         break;
       case 'Dm':
-        Dm.map(n => console.log(n));
-        setDisplay(display.concat(Dm));
+        Chords['Dm'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Dm'].chords));
         break;
       case 'Eb':
-        Eb.map(n => console.log(n));
-        setDisplay(display.concat(Eb));
+        Chords['Eb'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Eb'].chords));
         break;
       case 'E':
-        E.map(n => console.log(n));
-        setDisplay(display.concat(E));
+        Chords['E'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['E'].chords));
         break;
       case 'Em':
-        Em.map(n => console.log(n));
-        setDisplay(display.concat(Em));
+        Chords['Em'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Em'].chords));
         break;
       case 'F':
-        F.map(n => console.log(n));
-        setDisplay(display.concat(F));
+        Chords['F'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['F'].chords));
         break;
       case 'Fm':
-        Fm.map(n => console.log(n));
-        setDisplay(display.concat(Fm));
+        Chords['Fm'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Fm'].chords));
         break;
       case 'Gb':
-        Gb.map(n => console.log(n));
-        setDisplay(display.concat(Gb));
+        Chords['Gb'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Gb'].chords));
         break;
       case 'G':
-        G.map(n => console.log(n));
-        setDisplay(display.concat(G));
+        Chords['G'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['G'].chords));
         break;
       case 'Gm':
-        Gm.map(n => console.log(n));
-        setDisplay(display.concat(Gm));
+        Chords['Gm'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Gm'].chords));
         break;
       case 'Ab':
-        Ab.map(n => console.log(n));
-        setDisplay(display.concat(Ab));
+        Chords['Ab'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Ab'].chords));
         break;
       case 'Abm':
-        Abm.map(n => console.log(n));
-        setDisplay(display.concat(Abm));
+        Chords['Abm'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Abm'].chords));
         break;
       case 'A':
-        A.map(n => console.log(n));
-        setDisplay(display.concat(A));
+        Chords['A'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['A'].chords));
         break;
       case 'Am':
-        Am.map(n => console.log(n));
-        setDisplay(display.concat(Am));
+        Chords['Am'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Am'].chords));
         break;
       case 'Bb':
-        Bb.map(n => console.log(n));
-        setDisplay(display.concat(Bb));
+        Chords['Bb'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Bb'].chords));
         break;
       case 'B':
-        B.map(n => console.log(n));
-        setDisplay(display.concat(B));
+        Chords['B'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['B'].chords));
         break;
       case 'Bm':
-        Bm.map(n => console.log(n));
-        setDisplay(display.concat(Bm));
+        Chords['Bm'].chords.map(n => console.log(n));
+        setDisplay(display.concat(Chords['Bm'].chords));
         break;
       default:
         console.log('oops');
@@ -133,7 +133,7 @@ export default function App() {
   
   
   
-  const value = C.map((n, i) => {
+  const value = Chords['C'].chords.map((n, i) => {
     console.log('value', value);
     return (
     
@@ -153,29 +153,29 @@ export default function App() {
 
   const array = display.map((n, i) => {
     console.log('array', array);
-          return <li onClick={() => {
-            return (setChord(n), ChordChanger(n));
-          }
-          } key={i}>
-            {n}
-          </li>   
+    return <li onClick={() => {
+      return (setChord(n), ChordChanger(n));
+    }
+    } key={i}>
+      {n}
+    </li>;   
   });
 
   const ulGenerator = (arr) => {
     return (
       <ul >{arr}</ul>
-    )
-  }
+    );
+  };
 
 
   return (
-    <div style={{display: 'flex'}}>
+    <div style={{ display: 'flex' }}>
       <div>
         {/* <h1>{chord}</h1> */}
             Value: {ulGenerator(value)}
           
-        </div>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         New Arrays: {array}
       </div>
       {/* <ul>
